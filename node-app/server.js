@@ -38,4 +38,8 @@ app.post('/store-goal', (req, res) => {
   res.redirect('/');
 });
 
-app.listen(8000);
+const DEFAULT_PORT = 8000;
+
+app.listen(process.env.PORT || DEFAULT_PORT , () => {
+  console.log(`Server is running on port ${process.env.PORT || DEFAULT_PORT}`);
+})
